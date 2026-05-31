@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { createFeedback, updateInterviewFinalized } from "@/lib/actions/general.action";
+import { createFeedback} from "@/lib/actions/general.action";
 import Waveform from "@/components/ai/Waveform";
 import Timer from "@/components/ai/Timer";
 
@@ -316,21 +316,21 @@ export default function Agent({
       content: m.content,
     })) as { role: "user" | "assistant"; content: string }[];
 
-    try {
-      // ── FIX: mark the interview document as finalized ──────────────────
-      // This is the write that was missing — it updates the existing
-      // interviews/{interviewId} document so it appears in Firestore
-      // with finalized:true, role, techstack, level, difficulty, questions.
-      await updateInterviewFinalized({
-        interviewId,
-        userId,
-        role:       interviewRole,
-        level:      interviewLevel,
-        type:       interviewType,
-        techStack,
-        difficulty,
-        questions:  initialQuestions,
-      });
+     try {
+//       // ── FIX: mark the interview document as finalized ──────────────────
+//       // This is the write that was missing — it updates the existing
+//       // interviews/{interviewId} document so it appears in Firestore
+//       // with finalized:true, role, techstack, level, difficulty, questions.
+//       await updateInterviewFinalized({
+//         interviewId,
+//         userId,
+//         role:       interviewRole,
+//         level:      interviewLevel,
+//         type:       interviewType,
+//         techStack,
+//         difficulty,
+//         questions:  initialQuestions,
+//       });
 
       // ── Generate AI feedback ───────────────────────────────────────────
       const { success, feedbackId: id } = await createFeedback({
