@@ -98,14 +98,31 @@ const AuthForm = ({ type }: { type: FormType }) => {
   const isSignIn = type === "sign-in";
 
   return (
-    <div className="card-border lg:min-w-[566px]">
-      <div className="flex flex-col gap-6 card py-14 px-10">
-        <div className="flex flex-row gap-2 justify-center">
-          <Image src="/logo.svg" alt="logo" height={32} width={38} />
-          <h2 className="text-primary-100">PrepWise</h2>
-        </div>
+    <div className="flex flex-col items-center gap-4 text-center">
+  <div className="flex items-center gap-3">
+    <Image
+      src="/logo.svg"
+      alt="CrackCode"
+      height={38}
+      width={44}
+    />
+    <h2 className="text-primary-100 text-3xl font-bold tracking-tight">
+      CrackCode AI
+    </h2>
+  </div>
 
-        <h3>Practice job interviews with AI</h3>
+  <div className="space-y-2">
+    <h3 className="text-2xl font-semibold text-white">
+      AI Interview Intelligence Platform
+    </h3>
+
+    <p className="text-light-100 max-w-md text-sm leading-relaxed">
+      Master technical interviews through adaptive questioning,
+      real-time evaluation, personalized feedback, and
+      performance analytics.
+    </p>
+  </div>
+</div>
 
         <Form {...form}>
           <form
